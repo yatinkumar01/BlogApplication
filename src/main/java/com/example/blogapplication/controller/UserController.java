@@ -41,13 +41,15 @@ public class UserController {
         return new ResponseEntity<>(userOptional.getUserName() + "LogIn Successful", HttpStatus.ACCEPTED);
     }
 
+    @GetMapping("/getUsers/{email}")
+    public ResponseEntity<User> getUsersByEmail(@PathVariable String email) throws UserException {
+        return new ResponseEntity<>(userService.getUserByEmail(email), HttpStatus.ACCEPTED);
+    }
+
     @GetMapping("/AllUsers")
     public ResponseEntity<List<User>> getAllUsers() throws UserException {
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/getUsers/{email}")
-    public ResponseEntity<User> getUsersByEmail(@PathVariable String email) throws UserException {
-        return new ResponseEntity<>(userService.getUserByEmail(email), HttpStatus.ACCEPTED);
-    }
+
 }
