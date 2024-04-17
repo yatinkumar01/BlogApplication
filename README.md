@@ -2,6 +2,8 @@
 
 This is a simple blog application implemented using Spring Boot for the backend.
 
+**Deployed Link** : blogapplication-production-fc36.up.railway.app
+
 ## Features
 
 - **Categories**: CRUD operations for managing blog categories.
